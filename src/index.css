@@ -1,0 +1,57 @@
+@import url("bootstrap");
+@import url("bootstrap-icons");
+
+html{
+  height: 100vh;
+}
+
+.navbar{
+  background-color: #363636;
+}
+
+.product-image{
+  width: 200px;
+  height: 200px;
+}
+
+.card{
+  background-color: #46464c;
+  color: white;
+  border: solid 1px #363636;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.card-header{
+  background-color: #363636;
+}
+
+.product-card{
+  width: 50%;
+}
+
+.active{
+  border-bottom: 1px solid white;
+}
+
+.bold{
+  font-size: medium;
+  font-weight: 700;
+}
+
+.image-container{
+  border-right: 1px solid lightgray;
+}
+
+@media screen and (max-width: 992px){
+  .product-card{
+    flex-direction: column !important;
+  }
+
+  .image-container{
+    border-right: none;
+    border-bottom: 1px solid lightgray;
+    padding: 1rem 0; 
+  }
+}

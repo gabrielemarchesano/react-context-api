@@ -1,4 +1,6 @@
-import { Link, NavLink } from "react-router-dom"
+import { useContext } from "react"
+import { Link, NavLink } from "react-router-dom";
+import BudgetContext from "../context/BudgetContext";
 
 export default function Navbar() {
 
@@ -19,6 +21,8 @@ export default function Navbar() {
       body: "Products"
     }
   ]
+
+  const { budgetMode, setBudgetMode } = useContext(BudgetContext) 
 
   return (
     <>

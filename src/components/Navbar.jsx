@@ -38,6 +38,9 @@ export default function Navbar() {
                   </li>
                 ))
               }
+              <li className="nav-item">
+                <button type="button" className="btn btn-dark">Modalità Budget</button>
+              </li>
             </ul>
           </div>
         </div>

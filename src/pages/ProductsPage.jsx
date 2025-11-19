@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import BudgetContext from "../context/BudgetContext";
 
 export default function ProductsPage() {
 
@@ -8,11 +9,14 @@ export default function ProductsPage() {
 
   const [products, setProducts] = useState([]);
 
+  const {budgetMode} = useContext(BudgetContext);
+  console.log(budgetMode);
+
   useEffect(() => {
     axios
       .get(productsEndpoint)
       .then(response => {
-        console.log(response.data);
+        /* console.log(response.data); */
         setProducts(response.data);
       })
   }, [])

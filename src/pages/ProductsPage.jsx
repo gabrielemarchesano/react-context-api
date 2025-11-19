@@ -8,9 +8,10 @@ export default function ProductsPage() {
   const productsEndpoint = "https://fakestoreapi.com/products";
 
   const [products, setProducts] = useState([]);
+  const [data, setData] = useState([]);
 
   const {budgetMode} = useContext(BudgetContext);
-  console.log(budgetMode);
+  /* console.log(budgetMode); */
 
   useEffect(() => {
     axios
@@ -18,8 +19,20 @@ export default function ProductsPage() {
       .then(response => {
         /* console.log(response.data); */
         setProducts(response.data);
+        setData(response.data);
       })
   }, [])
+
+  useEffect(() => {
+    if(budgetMode){
+      const filtered = data.filter((obj) => {
+        return obj.price <= 30;
+      })
+      setProducts(filtered);
+    }else{
+      setProducts(data);
+    }
+  }, [budgetMode])
 
   return (
     <>

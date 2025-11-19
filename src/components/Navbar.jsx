@@ -39,9 +39,9 @@ export default function Navbar() {
                 ))
               }
               <li className="nav-item">
-                <button type="button" className="btn btn-dark" onClick={() => setBudgetMode(budgetMode === true ? false : true)}>
+                <button type="button" className="btn btn-dark" onClick={() => setBudgetMode(!budgetMode)}>
                   {
-                    budgetMode === true ? ("Disattiva Modalità Budget") : ("Attiva Modalità Budget")
+                    budgetMode ? ("Disattiva Modalità Budget") : ("Attiva Modalità Budget")
                   }
                 </button>
               </li>
